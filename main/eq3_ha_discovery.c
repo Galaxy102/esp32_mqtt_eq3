@@ -58,6 +58,10 @@ cJSON* generate_ha_therm_payload (char mac[6]) {
     cJSON_AddNumberToObject (root, "max_temp", 29.5);
     // "min_temp": 5
     cJSON_AddNumberToObject (root, "min_temp", 5);
+    // "precision": 0.5
+    cJSON_AddNumberToObject (root, "precision", 0.5);
+    // "temp_step": 0.5
+    cJSON_AddNumberToObject (root, "temp_step", 0.5);
     // "temperature_unit": "C"
     cJSON_AddStringToObject (root, "temperature_unit", "C");
     // "mode_command_topic": "eq3_radin/trv/XX:XX:XX:YY:YY:YY/mode"
