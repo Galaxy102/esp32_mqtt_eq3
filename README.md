@@ -284,3 +284,13 @@ menuconfig options allow setting of some parameters at compile time.
 - The boot-mode GPIO pin (normally a button on GPIO 0 on many ESP32 platforms) used to force the device into AP mode at boot.
 - Status LED GPIO which indicates if the device is in AP mode.
 - Password for AP mode (enables WPA2PSK) to prevent unwanted access should the device go into AP mode when it is unable to connect to its configured Access Point.
+
+To compile this application, you need to
+1. Install ESP-IDF (e.g. via VSCode plugin)
+2. go to the IDF directory (e.g. `$HOME/esp/esp-idf`)
+3. `git checkout v4.4.3`
+4. Run `install.sh` (if this fails, you may need to install Python3.8 and add it explicitly to the search script at `$HOME/esp/esp-idf/tools/detect_python.sh` and delete any previous venv)
+5. Go to your project directory, activate the IDF using `. $HOME/esp/esp-idf/export.sh`
+6. Run `idf.py build`
+
+When flashing after compilation, please note that the resulting files are located at `build/ota_data_initial.bin`, `build/bootloader/bootloader.bin`, `build/esp32_mqtt_eq3.bin` and `build/partition_table/partition-table.bin`.
